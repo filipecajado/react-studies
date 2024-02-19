@@ -1,6 +1,6 @@
-import React from "react";
-
-class Button extends React.Component {
+import React, { PropsWithChildren } from "react";
+import style from './Button.module.scss';
+class Button extends React.Component<PropsWithChildren> {
     render(){
         const estaAtivo = true;
         const color = 'red';
@@ -9,8 +9,8 @@ class Button extends React.Component {
             color: color
             }
         return(
-            <button style={styles}>
-                Botão
+            <button className={style.botao}>
+                {this.props.children}
             </button>
         )
     }
